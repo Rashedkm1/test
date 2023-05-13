@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Password Generator</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f0f0f0;
+				margin: 0;
+				padding: 0;
+			}
+			.pass-box {
+				width: 60%;
+				display: block;
+				margin: 0 auto;
+			}
+			h1 {
+				text-align: center;
+				margin-top: 30px;
+			}
+
+			p {
+				margin: 10px 0;
+			}
+
+			button {
+				background-color: #4caf50;
+				color: white;
+				padding: 10px 20px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				margin-right: 10px;
+			}
+
+			input[type='text'] {
+				width: 300px;
+				padding: 10px;
+				border: none;
+				border-radius: 5px;
+				margin-right: 10px;
+			}
+
+			#passwordStrength {
+				width: 300px;
+				padding: 10px;
+				border: none;
+				border-radius: 5px;
+				margin-right: 10px;
+			}
+
+			#passwordStrengthText {
+				display: inline-block;
+				margin-left: 10px;
+				font-weight: bold;
+			}
+
+			button:focus {
+				outline: none;
+			}
+
+			button:hover {
+				background-color: #3e8e41;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pass-box">
+			<h1>Password Generator</h1>
+
+			<p>Click the button below to generate a new password:</p>
+			<button id="generatePass">Generate Password</button>
+
+			<p>Your password is:</p>
+			<input type="text" id="passwordField" readonly />
+			<button onclick="copyPassword()">Copy Password</button>
+			<button onclick="showPassword()">Show Password</button>
+
+			<p>Check the strength of your password:</p>
+			<input
+				type="password"
+				id="passwordStrength"
+				onkeyup="checkPasswordStrength()"
+			/>
+			<div id="passwordStrengthText"></div>
+
+			<script src="app.js"></script>
+		</div>
+	</body>
+</html>
